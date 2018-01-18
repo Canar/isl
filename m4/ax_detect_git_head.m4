@@ -3,7 +3,7 @@ AC_DEFUN([AX_DETECT_GIT_HEAD], [
 	AC_SUBST(GIT_HEAD)
 	AC_SUBST(GIT_HEAD_VERSION)
 	if test -f $srcdir/.git; then
-		gitdir=`GIT_DIR=$srcdir/.git git rev-parse --git-dir`
+		gitdir=`GIT_DIR=$srcdir/.git ; git rev-parse --git-dir`
 		GIT_HEAD="$gitdir/index"
 		GIT_REPO="$gitdir"
 		GIT_HEAD_ID=`GIT_DIR=$GIT_REPO git describe --always`
